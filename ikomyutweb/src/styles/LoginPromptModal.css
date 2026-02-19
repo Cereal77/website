@@ -1,0 +1,64 @@
+.login-prompt-modal {
+  max-width: 400px;
+  text-align: center;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.prompt-header {
+  padding: 40px 20px 30px;
+}
+
+.prompt-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.prompt-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.prompt-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.prompt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px 30px;
+}
+
+.prompt-actions .btn {
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.prompt-actions .btn--primary {
+  background: linear-gradient(135deg, #00a652 0%, #008000 100%);
+  color: white;
+  border: none;
+}
+
+.prompt-actions .btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 166, 82, 0.25);
+}
+
+.prompt-actions .btn--secondary {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.prompt-actions .btn--secondary:hover {
+  background: #e8e8e8;
+}

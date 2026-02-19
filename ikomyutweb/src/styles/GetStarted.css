@@ -1,0 +1,506 @@
+.page-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.page-header {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  animation: slideInDown 0.6s ease-out;
+}
+
+.back-button {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  background: #00a652;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.back-button:hover {
+  background: #008000;
+  transform: translateX(-5px);
+}
+
+.page-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  animation: slideInDown 0.7s ease-out 0.1s both;
+}
+
+.page-header p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideInDown 0.7s ease-out 0.2s both;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Setup Section */
+.setup-section {
+  margin-bottom: 80px;
+}
+
+.setup-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideInUp 0.7s ease-out;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.step-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+.step-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.step-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.step-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.step-card:hover {
+  border-color: #00a652;
+  box-shadow: 0 10px 30px rgba(0, 166, 82, 0.15);
+  transform: translateY(-8px);
+  animation: bounce 0.6s ease-in-out;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00a652 0%, #008000 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  animation: scaleIn 0.5s ease-out backwards;
+}
+
+.step-card:nth-child(1) .step-number {
+  animation-delay: 0.1s;
+}
+
+.step-card:nth-child(2) .step-number {
+  animation-delay: 0.2s;
+}
+
+.step-card:nth-child(3) .step-number {
+  animation-delay: 0.3s;
+}
+
+.step-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.step-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.step-card li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.step-card li:last-child {
+  border-bottom: none;
+}
+
+.app-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.app-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.app-button.ios {
+  background: #000;
+  color: white;
+}
+
+.app-button.ios:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.app-button.android {
+  background: #3ddc84;
+  color: #1f1f1f;
+}
+
+.app-button.android:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(61, 220, 132, 0.3);
+}
+
+/* Benefits Section */
+.benefits-section {
+  margin-bottom: 80px;
+}
+
+.benefits-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideInUp 0.7s ease-out;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+.benefit-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.benefit-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.benefit-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.benefit-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.benefit-item:hover {
+  background: white;
+  border: 2px solid #00a652;
+  box-shadow: 0 5px 20px rgba(0, 166, 82, 0.1);
+}
+
+.benefit-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.benefit-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.benefit-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #00a652 0%, #008000 100%);
+  border-radius: 12px;
+  color: white;
+  animation: slideInUp 0.7s ease-out;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: white;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin: 0 0 24px 0;
+  opacity: 0.95;
+}
+
+.cta-button {
+  background: white;
+  color: #00a652;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  animation: bounce 0.4s ease-in-out;
+}
+
+/* Scroll Animation Styles */
+.setup-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.setup-section.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.setup-section.scroll-animate .step-card {
+  animation: slideInUp 0.6s ease-out backwards !important;
+}
+
+.setup-section.scroll-animate .step-card:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.setup-section.scroll-animate .step-card:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.setup-section.scroll-animate .step-card:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.benefits-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.benefits-section.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.benefits-section.scroll-animate .benefit-item {
+  animation: slideInUp 0.6s ease-out backwards !important;
+}
+
+.benefits-section.scroll-animate .benefit-item:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+
+.benefits-section.scroll-animate .benefit-item:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+
+.benefits-section.scroll-animate .benefit-item:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+.benefits-section.scroll-animate .benefit-item:nth-child(4) {
+  animation-delay: 0.4s !important;
+}
+
+.cta-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.cta-section.scroll-animate {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInUp 0.7s ease-out !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 30px 20px 50px;
+  }
+
+  .back-button {
+    left: 20px;
+    top: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .page-header p {
+    font-size: 16px;
+  }
+
+  .setup-section h2,
+  .benefits-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .steps-grid,
+  .benefits-list {
+    gap: 20px;
+  }
+
+  .cta-section {
+    padding: 40px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+}
