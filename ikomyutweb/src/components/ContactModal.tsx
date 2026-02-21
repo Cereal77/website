@@ -124,16 +124,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             {/* NAME */}
             <div className="form-group">
               <input
-  id="name"
-  type="text"
-  name="name"
-  value={formData.name}
-  onChange={handleChange}
-  placeholder="Your name"
-  required
-  disabled={loading}
-/>
-
+                id="name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                required
+                disabled={loading}
+              />
             </div>
 
             {/* EMAIL */}
@@ -144,7 +143,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder={formData.email ? '' : 'Email'}
+                placeholder="Email"
                 required
                 disabled={loading}
               />
@@ -157,7 +156,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder={formData.message ? '' : 'Message'}
+                placeholder="Message"
                 rows={5}
                 required
                 disabled={loading}

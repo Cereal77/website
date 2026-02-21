@@ -52,6 +52,41 @@
   font-size: 14px;
   font-family: inherit;
   transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Placeholder styling - IMPORTANT */
+.form-group input::placeholder {
+  color: #aaa !important;
+  opacity: 1 !important;
+}
+
+.form-group textarea::placeholder {
+  color: #aaa !important;
+  opacity: 1 !important;
+}
+
+/* Firefox placeholder styling */
+.form-group input::-moz-placeholder {
+  color: #aaa !important;
+  opacity: 1 !important;
+}
+
+.form-group textarea::-moz-placeholder {
+  color: #aaa !important;
+  opacity: 1 !important;
+}
+
+/* For IE 10-11 */
+.form-group input:-ms-input-placeholder {
+  color: #aaa !important;
+}
+
+.form-group textarea:-ms-input-placeholder {
+  color: #aaa !important;
 }
 
 .form-group input:focus,
@@ -65,11 +100,6 @@
 .form-group textarea:disabled {
   background-color: #f5f5f5;
   cursor: not-allowed;
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #555;
-  opacity: 1;
 }
 
 .contact-form .btn {

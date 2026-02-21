@@ -2,6 +2,10 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const Contact = require('../models/Contact');
 
+// Temporary storage for pending verifications (in-memory)
+// In production, consider using Redis or a PendingContact collection
+const pendingVerifications = new Map();
+
 // Email validation regex - stricter validation
 const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
 
@@ -59,21 +63,20 @@ exports.sendContactEmail = async (req, res) => {
       return res.status(400).json({ message: 'Please enter a valid email address' });
     }
 
-    console.log('Saving contact from:', email);
+    console.log('Pending verification from:', email);
 
     // Generate verification token
     const verificationToken = crypto.randomBytes(32).toString('hex');
 
-    // Save contact to database (not verified yet)
-    const contact = await Contact.create({
+    // Store in temporary memory (will be deleted after verification or timeout)
+    pendingVerifications.set(verificationToken, {
       name,
       email,
       message,
-      verificationToken,
-      isVerified: false,
+      createdAt: new Date(),
     });
 
-    console.log('Contact saved to database with ID:', contact._id);
+    console.log('Pending verification stored, token:', verificationToken);
 
     // Send verification email to user
     const verifyLink = `http://localhost:5000/api/contact/verify/${verificationToken}`;
@@ -123,23 +126,25 @@ exports.verifyContactEmail = async (req, res) => {
 
     console.log('Verifying token:', token);
 
-    // Find contact by verification token
-    const contact = await Contact.findOne({ verificationToken: token });
+    // Find verification data from temporary storage
+    const pendingData = pendingVerifications.get(token);
 
-    if (!contact) {
+    if (!pendingData) {
       return res.status(400).json({ message: 'Invalid or expired verification link' });
     }
 
-    if (contact.isVerified) {
-      return res.status(400).json({ message: 'Email already verified' });
-    }
+    // Create contact in database only after verification
+    const contact = await Contact.create({
+      name: pendingData.name,
+      email: pendingData.email,
+      message: pendingData.message,
+      isVerified: true,
+    });
 
-    // Mark as verified
-    contact.isVerified = true;
-    contact.verificationToken = undefined;
-    await contact.save();
+    console.log('Contact saved to database after verification:', contact._id);
 
-    console.log('Contact verified:', contact._id);
+    // Delete from temporary storage
+    pendingVerifications.delete(token);
 
     // Send admin notification email
     const adminMailOptions = {
