@@ -42,7 +42,6 @@ const HomePage: React.FC<HomePageProps> = ({
 }) => {
   const { isLoggedIn } = useAuth();
   
-  // Scroll animation hooks
   const feature1 = useScrollAnimation();
   const feature2 = useScrollAnimation();
   const pricingSection = useScrollAnimation();
@@ -81,7 +80,6 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <>
-      {/* Header */}
       <header className="header">
         <div className="header__container">
           <div className="header__logo">
@@ -112,12 +110,9 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className="hero">
-        {/* Background Map */}
         <div className="hero__bg-map"></div>
-        
-        {/* Floating Icons */}
+  
         <div className="hero__icon hero__icon--bus-1"><img src="/bus.png" alt="Bus" className="hero__icon-img" /></div>
         <div className="hero__icon hero__icon--bus-2"><img src="/bus.png" alt="Bus" className="hero__icon-img" /></div>
         <div className="hero__icon hero__icon--bus-3"><img src="/bus.png" alt="Bus" className="hero__icon-img" /></div>
@@ -143,7 +138,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Feature 1: Real-Time Vehicle Tracking */}
       <section 
         id="features" 
         className={`feature ${feature1.isVisible ? 'scroll-animate' : ''}`}
@@ -163,7 +157,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Feature 2: Integrated Ticketing System */}
       <section 
         className={`feature ${feature2.isVisible ? 'scroll-animate' : ''}`}
         ref={feature2.elementRef as React.RefObject<HTMLElement>}
@@ -182,7 +175,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Pricing Section */}
       <section 
         id="pricing" 
         className={`pricing ${pricingSection.isVisible ? 'scroll-animate' : ''}`}
@@ -190,7 +182,7 @@ const HomePage: React.FC<HomePageProps> = ({
       >
         <h2 className="pricing__title">Pricing Plans</h2>
         <div className="pricing__grid">
-          {/* Basic Plan */}
+    
           <div className="pricing__card">
             <h3 className="pricing__plan-name">Basic</h3>
             <p className="pricing__price">₱99/month</p>
@@ -204,7 +196,6 @@ const HomePage: React.FC<HomePageProps> = ({
             <button className="btn btn--secondary" onClick={() => handlePricingClick('Basic', '₱99/month')}>Choose Plan</button>
           </div>
 
-          {/* Pro Plan */}
           <div className="pricing__card pricing__card--featured">
             <h3 className="pricing__plan-name">Pro</h3>
             <p className="pricing__price">₱299/month</p>
@@ -219,7 +210,6 @@ const HomePage: React.FC<HomePageProps> = ({
             <button className="btn btn--primary" onClick={() => handlePricingClick('Pro', '₱299/month')}>Choose Plan</button>
           </div>
 
-          {/* Enterprise Plan */}
           <div className="pricing__card">
             <h3 className="pricing__plan-name">Enterprise</h3>
             <p className="pricing__price">Custom</p>
@@ -236,7 +226,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Footer */}
       <footer 
         className={`footer ${footerSection.isVisible ? 'scroll-animate' : ''}`}
         ref={footerSection.elementRef as React.RefObject<HTMLElement>}
@@ -274,7 +263,6 @@ const HomePage: React.FC<HomePageProps> = ({
         </div>
       </footer>
 
-      {/* Payment Modal */}
       <PaymentModal
         isOpen={showPaymentModal}
         planName={selectedPlan?.name || ''}
@@ -283,13 +271,11 @@ const HomePage: React.FC<HomePageProps> = ({
         onPaymentSelect={onPaymentSelect}
       />
 
-      {/* Contact Modal */}
       <ContactModal
         isOpen={showContactModal}
         onClose={() => setShowContactModal(false)}
       />
 
-      {/* Login Prompt Modal */}
       <LoginPromptModal 
         isOpen={showLoginPrompt && !isLoggedIn} 
         onLoginClick={onGoToLoginPage}

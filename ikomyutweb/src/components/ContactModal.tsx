@@ -32,25 +32,21 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setError('');
     setLoading(true);
 
-    // Email validation regex - stricter validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     const email = formData.email.trim();
 
-    // Validate email format
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address');
       setLoading(false);
       return;
     }
 
-    // Check minimum length
     if (email.length < 5) {
       setError('Please enter a valid email address');
       setLoading(false);
       return;
     }
 
-    // Check if it starts or ends with a dot or has consecutive dots
     if (email.startsWith('.') || email.endsWith('.') || email.includes('..')) {
       setError('Please enter a valid email address');
       setLoading(false);
@@ -58,7 +54,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://ikomyutweb-4.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -71,7 +67,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         throw new Error(errorMsg);
       }
 
-      // Show verification sent message
       setVerificationSent(true);
 
       setTimeout(() => {
@@ -121,7 +116,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               </div>
             )}
 
-            {/* NAME */}
             <div className="form-group">
               <input
                 id="name"
@@ -135,7 +129,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               />
             </div>
 
-            {/* EMAIL */}
             <div className="form-group">
               <input
                 id="email"
@@ -149,7 +142,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               />
             </div>
 
-            {/* MESSAGE */}
             <div className="form-group">
               <textarea
                 id="message"

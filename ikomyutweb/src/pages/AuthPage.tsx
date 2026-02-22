@@ -19,7 +19,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onAuthSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [successLoading, setSuccessLoading] = useState(false);
   const { setUserFromBackend } = useAuth();
-  const API_BASE = 'http://localhost:5000/api/auth';
+  const API_BASE = 'https://ikomyutweb-4.onrender.com/api/auth';
 
     // Login handler
     const handleLogin = async (e: React.FormEvent) => {

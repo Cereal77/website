@@ -30,7 +30,7 @@ const PricingModal: React.FC<PricingModalProps> = ({ isOpen, onClose, onSelectPl
         </div>
 
         <div className="pricing__grid modal-pricing">
-          {/* Basic Plan */}
+         
           <div className="pricing__card">
             <h3 className="pricing__plan-name">Basic</h3>
             <p className="pricing__price">₱99<span>/month</span></p>
@@ -49,7 +49,6 @@ const PricingModal: React.FC<PricingModalProps> = ({ isOpen, onClose, onSelectPl
             </button>
           </div>
 
-          {/* Pro Plan */}
           <div className="pricing__card pricing__card--featured">
             <div className="featured-badge">Most Popular</div>
             <h3 className="pricing__plan-name">Pro</h3>
@@ -70,7 +69,6 @@ const PricingModal: React.FC<PricingModalProps> = ({ isOpen, onClose, onSelectPl
             </button>
           </div>
 
-          {/* Enterprise Plan */}
           <div className="pricing__card">
             <h3 className="pricing__plan-name">Enterprise</h3>
             <p className="pricing__price">Custom</p>
