@@ -63,7 +63,6 @@ const AuthPage: React.FC<AuthPageProps> = ({ onAuthSuccess }) => {
       }
     };
 
-    // Register handler
     const handleRegister = async (e: React.FormEvent) => {
       e.preventDefault();
       setError('');

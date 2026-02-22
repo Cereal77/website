@@ -24,15 +24,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (email: string, password: string) => {
-    // Simulate API call
+    
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    // Basic validation
     if (!email || !password) {
       throw new Error('Email and password are required');
     }
 
-    // Simulate successful login
     const newUser: User = {
       id: '1',
       email,
@@ -43,7 +41,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const register = async (name: string, email: string, password: string) => {
-    // Simulate API call
+  
     await new Promise(resolve => setTimeout(resolve, 500));
 
     if (!name || !email || !password) {
@@ -54,7 +52,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       throw new Error('Password must be at least 6 characters');
     }
 
-    // Simulate successful registration
     const newUser: User = {
       id: '1',
       email,
@@ -78,7 +75,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     localStorage.setItem('user', JSON.stringify(userData));
   };
 
-  // Load user from localStorage on mount
   React.useEffect(() => {
     const savedUser = localStorage.getItem('user');
     if (savedUser) {

@@ -86,3 +86,154 @@
 .confirmation-actions .btn--secondary:hover {
   background: #e8e8e8;
 }
+
+/* Mobile responsive */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+  .confirmation-modal {
+    width: 95%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .confirmation-header {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+
+  .confirmation-icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+  }
+
+  .confirmation-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .confirmation-header p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .confirmation-actions {
+    gap: 0.75rem;
+    padding: 0 1rem 1.5rem;
+  }
+
+  .confirmation-actions .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+    border-radius: 6px;
+  }
+}
+
+/* Small Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .confirmation-modal {
+    width: 90%;
+    max-width: 450px;
+  }
+
+  .confirmation-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .confirmation-icon {
+    font-size: 56px;
+    margin-bottom: 1.25rem;
+  }
+
+  .confirmation-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .confirmation-actions {
+    gap: 1rem;
+    padding: 0 1.5rem 2rem;
+  }
+
+  .confirmation-actions .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .confirmation-modal {
+    max-width: 400px;
+  }
+
+  .confirmation-header {
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  .confirmation-actions {
+    padding: 0 2rem 2rem;
+  }
+}
+
+/* Large Devices (1025px and above) */
+@media (min-width: 1025px) {
+  .confirmation-modal {
+    max-width: 400px;
+  }
+}
+
+/* Touch Device Adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .confirmation-actions .btn {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+
+  .confirmation-actions .btn:active {
+    opacity: 0.85;
+    transform: none;
+  }
+
+  .confirmation-actions .btn--danger:active,
+  .confirmation-actions .btn--primary:active,
+  .confirmation-actions .btn--secondary:active {
+    opacity: 0.85;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .confirmation-modal {
+    max-height: 90vh;
+  }
+
+  .confirmation-header {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .confirmation-icon {
+    font-size: 44px;
+    margin-bottom: 0.75rem;
+  }
+
+  .confirmation-header h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .confirmation-header p {
+    font-size: 0.85rem;
+  }
+
+  .confirmation-actions {
+    gap: 0.5rem;
+    padding: 0 1rem 1rem;
+  }
+
+  .confirmation-actions .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}

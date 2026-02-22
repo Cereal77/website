@@ -87,18 +87,19 @@
 
 .back-button {
   position: absolute;
-  left: 40px;
-  top: 40px;
+  left: 20px;
+  top: 10px;
   background: #00a652;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   z-index: 10;
-  pointer-events: auto;
+  min-height: auto;
 }
 
 .back-button:hover {
@@ -460,47 +461,235 @@
 }
 
 /* Mobile responsive */
-@media (max-width: 768px) {
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
   .page-header {
-    padding: 30px 20px 50px;
+    padding: 1.5rem 1rem 2rem;
   }
 
   .back-button {
-    left: 20px;
-    top: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
+    left: 1rem;
+    top: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    min-height: auto;
   }
 
   .page-header h1 {
-    font-size: 28px;
-    margin-top: 20px;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.3;
   }
 
   .page-header p {
-    font-size: 16px;
+    font-size: 0.9rem;
+  }
+
+  .setup-section,
+  .benefits-section {
+    padding: 2rem 1rem;
   }
 
   .setup-section h2,
   .benefits-section h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
   }
 
   .steps-grid,
   .benefits-list {
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-card,
+  .benefit-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .step-content h3,
+  .benefit-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-content p,
+  .benefit-item p {
+    font-size: 0.9rem;
   }
 
   .cta-section {
-    padding: 40px 20px;
+    padding: 2rem 1rem;
   }
 
   .cta-section h2 {
-    font-size: 24px;
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
   }
 
   .cta-section p {
-    font-size: 16px;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+}
+
+/* Small Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .back-button {
+    left: 1.5rem;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    min-height: auto;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .setup-section,
+  .benefits-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .setup-section h2,
+  .benefits-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .steps-grid,
+  .benefits-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .step-card,
+  .benefit-item {
+    padding: 1.5rem;
+  }
+
+  .cta-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-header {
+    padding: 3rem 2rem 4rem;
+  }
+
+  .back-button {
+    left: 1.5rem;
+    top: 1rem;
+  }
+
+  .setup-section h2,
+  .benefits-section h2 {
+    font-size: 2rem;
+  }
+
+  .steps-grid,
+  .benefits-list {
+    gap: 2rem;
+  }
+
+  .cta-section {
+    padding: 4rem 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Large Devices (1025px and above) */
+@media (min-width: 1025px) {
+  .page-header {
+    padding: 4rem 2rem 5rem;
+  }
+
+  .back-button {
+    left: 1.5rem;
+    top: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-height: auto;
+  }
+}
+
+/* Touch Device Adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .cta-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .back-button:active,
+  .cta-button:active {
+    opacity: 0.85;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .page-header {
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.35rem;
+    margin-top: 0.5rem;
+  }
+
+  .setup-section,
+  .benefits-section {
+    padding: 1.5rem;
+  }
+
+  .steps-grid,
+  .benefits-list {
+    gap: 1rem;
+  }
+
+  .cta-section {
+    padding: 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.25rem;
   }
 }
