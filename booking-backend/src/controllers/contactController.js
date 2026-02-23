@@ -79,7 +79,8 @@ exports.sendContactEmail = async (req, res) => {
     console.log('Pending verification stored, token:', verificationToken);
 
     // Send verification email to user
-    const verifyLink = `http://localhost:5000/api/contact/verify/${verificationToken}`;
+    const baseURL = process.env.BASE_URL || 'https://ikomyutweb-4.onrender.com';
+    const verifyLink = `${baseURL}/api/contact/verify/${verificationToken}`;
     
     const verificationMailOptions = {
       from: process.env.GMAIL_USER,
@@ -187,7 +188,7 @@ exports.verifyContactEmail = async (req, res) => {
             <h1>Email Verified!</h1>
             <p>Thank you for verifying your email.</p>
             <p>Your message has been received and we will get back to you soon.</p>
-            <p><a href="http://localhost:5173">Return to website</a></p>
+            <p><a href="https://ikomyutweb-6.onrender.com">Return to website</a></p>
           </div>
         </body>
       </html>
