@@ -54,7 +54,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
 
     try {
-      const response = await fetch('https://ikomyutweb-4.onrender.com/api/contact', {
+      const response = await fetch('https://website-1-1dpj.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
